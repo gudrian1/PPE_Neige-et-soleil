@@ -4,7 +4,7 @@ require "constants.php";
 require "functions.php";
 ?>
 
-Hello World
+Hello World & test
 <!doctype html>
 <html lang="en">
 
