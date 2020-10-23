@@ -59,17 +59,20 @@ require "functions.php";
             <a class="py-2 d-none d-md-inline-block" href="#">Categories</a>
             <a class="py-2 d-none d-md-inline-block" href="inscription.php">Inscription</a>
             <a class="py-2 d-none d-md-inline-block" href="compte.php">Compte</a>
-
             <a class="py-2 d-none d-md-inline-block" href="deconexion.php">Deconexion</a>
 
         </div>
     </nav>
 
     </br>
-     <div class="container">
-
-
-        <?php 
+    <div class="container">
+        <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow">
+            <div>
+                <a class="btn btn-sm btn-outline-secondary" href="connexion.php">Se connecter</a>
+                
+            </div>
+</br>
+            <?php 
         
         if (isset( $_SESSION['firstName'])){
             
@@ -81,13 +84,18 @@ require "functions.php";
             echo ' C est votre espace utilisateur.';
             
         }else {
-        echo 'Vous etes pas inscrit !';
+        echo 'Vous n etes pas connecté ! </br>';
             
+         
         }?>
-        
-        
-        
+
+
         </div>
+    </div>
+
+
+
+
 
 
 
