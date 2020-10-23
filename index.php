@@ -58,9 +58,7 @@ require "functions.php";
             <h4>Minecraft</h4>
             <a class="py-2 d-none d-md-inline-block" href="index.php">Acceuil</a>
             <a class="py-2 d-none d-md-inline-block" href="#">Categories</a>
-            <a class="py-2 d-none d-md-inline-block" href="inscription.php">Inscription</a>
             <a class="py-2 d-none d-md-inline-block" href="compte.php">Compte</a>
-
             <a class="py-2 d-none d-md-inline-block" href=deconexion.php>Deconexion</a>
 
         </div>
@@ -94,7 +92,7 @@ require "functions.php";
             <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
         </div>
     </div>
-    
+
 
 
 

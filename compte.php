@@ -57,7 +57,6 @@ require "functions.php";
             <h4>Minecraft</h4>
             <a class="py-2 d-none d-md-inline-block" href="index.php">Acceuil</a>
             <a class="py-2 d-none d-md-inline-block" href="#">Categories</a>
-            <a class="py-2 d-none d-md-inline-block" href="inscription.php">Inscription</a>
             <a class="py-2 d-none d-md-inline-block" href="compte.php">Compte</a>
             <a class="py-2 d-none d-md-inline-block" href="deconexion.php">Deconexion</a>
 
@@ -68,10 +67,14 @@ require "functions.php";
     <div class="container">
         <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow">
             <div>
-                <a class="btn btn-sm btn-outline-secondary" href="connexion.php">Se connecter</a>
+               <a>
+                <a class="btn btn-sm btn-outline-secondary" href="connexion.php">Se connecter
                 
+                </a>
+                <a class="btn btn-sm btn-outline-secondary" href="inscription.php">S'inscire</a>
+                </a>
             </div>
-</br>
+            
             <?php 
         
         if (isset( $_SESSION['firstName'])){
@@ -88,6 +91,8 @@ require "functions.php";
             
          
         }?>
+        
+           
 
 
         </div>
