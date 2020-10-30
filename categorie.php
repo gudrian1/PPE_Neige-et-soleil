@@ -63,3 +63,28 @@ require "functions.php";
 
         </div>
     </nav>
+   <?php
+
+$titre="Voir un forum";
+$bdd = connectBDD(NAMEBDD,ROOT,HOST,MDPBDD);
+    
+//On récupère la valeur de f
+$forum ='f';
+
+
+//A partir d'ici, on va compter le nombre de messages
+//pour n'afficher que les 25 premiers
+$query=$bdd->prepare('SELECT titre FROM category WHERE id_cat = :forum');
+$query->bindValue(':forum',$forum,PDO::PARAM_INT);
+$query->execute();
+$data=$query->fetch();
+
+
+$nombreDeMessagesParPage = 25;
+$nombreDePages = $nombreDeMessagesParPage;
+?> 
+   
+  
+ 
+    </body>
+</html>

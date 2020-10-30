@@ -86,10 +86,9 @@ require "functions.php";
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-    </div>
-    <?php
+    </div
         
-        
+    <?php      
     }
     
     if(isset($_POST['submit'])){

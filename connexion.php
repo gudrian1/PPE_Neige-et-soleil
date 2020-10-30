@@ -98,17 +98,6 @@ require "functions.php";
  <a class="btn btn-sm btn-outline-secondary" href="compte.php">Retour</a>
     </div>
 
-     
-
-
-
-
-
-
-
-
-
-
     <footer class="container py-5">
         <div class="row">
             <div class="col-12 col-md">

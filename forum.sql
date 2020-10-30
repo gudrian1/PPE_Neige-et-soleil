@@ -29,6 +29,8 @@ SET time_zone = "+00:00";
 --
 CREATE database forum;
 use forum;
+
+
 CREATE TABLE `category` (
   `id_cat` int(11) NOT NULL,
   `titre` varchar(50) DEFAULT NULL

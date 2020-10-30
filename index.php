@@ -4,7 +4,7 @@ require "constants.php";
 require "functions.php";
 ?>
 
-bonjour
+
 
 
 <!doctype html>
