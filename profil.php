@@ -3,7 +3,8 @@ session_start();
 require "constants.php";
 require "functions.php";
 ?>
-<!-- test -->
+
+
 <!doctype html>
 <html lang="en">
 
@@ -56,55 +57,17 @@ require "functions.php";
         <div class="container d-flex flex-column flex-md-row justify-content-between bg-success">
             <h4>Minecraft</h4>
             <a class="py-2 d-none d-md-inline-block" href="index.php">Acceuil</a>
-            <a class="py-2 d-none d-md-inline-block" href="categorie.php">Categories</a>
- 
+            <a class="py-2 d-none d-md-inline-block" href="#">Categories</a>
             <a class="py-2 d-none d-md-inline-block" href="compte.php">Compte</a>
-            <a class="py-2 d-none d-md-inline-block" href="deconexion.php">Deconexion</a>
+            <a class="py-2 d-none d-md-inline-block" href=deconexion.php>Deconexion</a>
 
         </div>
     </nav>
-
     
-
-
-        
-   <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow">
-        <form class="form-signin">
-            <div class="text-center mb-4">
-               </br>
-                <img  src="img/cube.jpg" width="72" height="72">
-                </br>
-                <h1 class="h3 mb-3 font-weight-normal">Connexion :</h1>
-            </div>
-
-            <div class="form-label-group">
-                <input type="email" id="inputEmail3" class="form-control" placeholder="Email address" required autofocus>
-                <label for="inputEmail3">Email </label>
-            </div>
-
-            <div class="form-label-group">
-                <input type="password" id="inputPassword3" class="form-control" placeholder="Password" required>
-                <label for="inputPassword3">Mot de passe</label>
-            </div>
-
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Se souvenir de moi
-                </label>
-            </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
-        </form>
-        </br>
- <a class="btn btn-sm btn-outline-secondary" href="compte.php">Retour</a>
-    </div>
-
-     
-
-
-
-
-
-
+    <?php
+echo $_SESSION['firstName'];
+echo $_SESSION['lastName'];
+    ?>
 
 
 

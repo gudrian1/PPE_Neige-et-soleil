@@ -57,7 +57,7 @@ require "functions.php";
         <div class="container d-flex flex-column flex-md-row justify-content-between bg-success">
             <h4>Minecraft</h4>
             <a class="py-2 d-none d-md-inline-block" href="index.php">Acceuil</a>
-            <a class="py-2 d-none d-md-inline-block" href="#">Categories</a>
+            <a class="py-2 d-none d-md-inline-block" href="categorie.php">Categories</a>
             <a class="py-2 d-none d-md-inline-block" href="compte.php">Compte</a>
             <a class="py-2 d-none d-md-inline-block" href=deconexion.php>Deconexion</a>
 
@@ -65,33 +65,33 @@ require "functions.php";
     </nav>
 
 
-    <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow">
-        <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-            <div class="my-3 py-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
-            </div>
-            <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+     <div class="my-3 p-3 bg-white rounded box-shadow">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Actualité</h6>
+        <div class="media text-muted pt-3">
+         
+          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <strong class="d-block text-gray-dark">@username</strong>
+            Minecraft - Craft une table.
+          </p>
         </div>
-    </div>
-    <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow">
-        <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-            <div class="my-3 py-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
-            </div>
-            <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+        <div class="media text-muted pt-3">
+          
+          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <strong class="d-block text-gray-dark">@username</strong>
+            Minecraft - Tuer un Creeper.
+          </p>
         </div>
-    </div>
-    <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow">
-        <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-            <div class="my-3 py-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
-            </div>
-            <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+        <div class="media text-muted pt-3">
+          
+          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <strong class="d-block text-gray-dark">@username</strong>
+            Minecraft - Heberger un serveur.
+          </p>
         </div>
-    </div>
+        <small class="d-block text-right mt-3">
+          <a href="#">Tous les topics</a>
+        </small>
+      </div>
 
 
 

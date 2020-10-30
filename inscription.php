@@ -116,7 +116,7 @@ require "functions.php";
         header("Location:compte.php");
     }
     ?>
-    <div class="container">
+    <div class="bg-light mr-md-3 pt-3 px-3 pt-md-6 px-md-5  ">
         <div class="row">
             <div class="col-12">
 
@@ -172,7 +172,6 @@ require "functions.php";
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="gridCheck1">
                                 <label class="form-check-label" for="gridCheck1">
-
                                 </label>
                             </div>
                         </div>
@@ -184,15 +183,19 @@ require "functions.php";
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-sm-10">
-                            <button type="submit" name="submit" class="btn btn-primary">Inscription</button>
-                        </div>
+                        
                     </div>
                 </form>
-
+                <div class="col-sm-10 text-center">
+                            <button type="submit" name="submit" class="btn btn-lg btn-primary btn-block">Inscription</button>
+                    </br>
+                            <a class="btn btn-sm btn-outline-secondary" href="compte.php">Retour</a>
+                        </div>
+                        
+                
             </div>
         </div>
-  <a class="btn btn-sm btn-outline-secondary" href="compte.php">Retour</a>
+  
     </div>
 
 

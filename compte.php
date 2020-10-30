@@ -56,7 +56,7 @@ require "functions.php";
         <div class="container d-flex flex-column flex-md-row justify-content-between bg-success">
             <h4>Minecraft</h4>
             <a class="py-2 d-none d-md-inline-block" href="index.php">Acceuil</a>
-            <a class="py-2 d-none d-md-inline-block" href="#">Categories</a>
+            <a class="py-2 d-none d-md-inline-block"href="categorie.php">Categories</a>
             <a class="py-2 d-none d-md-inline-block" href="compte.php">Compte</a>
             <a class="py-2 d-none d-md-inline-block" href="deconexion.php">Deconexion</a>
 
