@@ -27,4 +27,5 @@ function connectBDD($nameBdd, $root, $host, $mdpBdd){
     return $bdd;
 }
 
+
 ?>
