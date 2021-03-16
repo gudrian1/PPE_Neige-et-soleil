@@ -4,29 +4,14 @@ require "constants.php";
 require "functions.php";
 //partie haute commune à toutes les pages
 require "partie_commune_haute.php";
-?>
 
+//***Si l'utilisateur est connecté , il doit d'abord se deconnecter pour créer un autre compte
+if (isset($_SESSION['firstName']))
+    echo "<div class=\"bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow\">
+              Vous devez d'abord vous déconnecter pour crée un autre compte</div>";
 
-<?php
-
-    $bdd = connectBDD( NAMEBDD, ROOT, HOST, MDPBDD );
-
-    if ( isset( $_GET['mdp'] ) && $_GET['mdp'] == "forget" ) {
-
-    $mdp = generateMdp();
-
-    // mail( "aaa@gmail", "Reinit mdp", "Votre nouveau mdp est".$mdp );
-
-    $mdp = sha1( $mdp );
-
-    $requete = $bdd->query( "UPDATE users SET mdp = '".$mdp."' where id_u = 1" );
-}
-
-    ?>
-
-
-<?php
-               
+//************PARTIE VERIFICATION DE INFORMATIONS SAISIES**************//
+$bdd = connectBDD( NAMEBDD, ROOT, HOST, MDPBDD );
 
 if ( isset( $_POST['submit'] ) ) {
     //recuperation des informations
@@ -34,24 +19,34 @@ if ( isset( $_POST['submit'] ) ) {
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $email = $_POST['email'];
-    $mdp = sha1( $_POST['mdp'] );
+    $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+    $adresseU = $_POST['adresseU'];
+    $telU = $_POST['telU'];
     // crypte le mot de passe
 
-    $requete = $bdd->prepare( 'INSERT INTO users(lastName,firstName,email,mdp) VALUES(:lastName,:firstName,:email,:mdp)' );
+    $requete = $bdd->prepare( 'INSERT INTO users(civ,lastName,firstName,email,mdp,adresseU,telU) VALUES(:civ,:lastName,:firstName,:email,:mdp,:adresseU,:telU)' );
+    $requete->bindValue( ':civ', $civ, PDO::PARAM_STR );
     $requete->bindValue( ':lastName', $lastName, PDO::PARAM_STR );
     $requete->bindValue( ':firstName', $firstName, PDO::PARAM_STR );
     $requete->bindValue( ':email', $email, PDO::PARAM_STR );
     $requete->bindValue( ':mdp', $mdp, PDO::PARAM_STR );
+    $requete->bindvalue( ':adresseU', $adresseU, PDO::PARAM_STR);
+    $requete->bindvalue( ':telU', $telU, PDO::PARAM_STR);
     $requete->execute();
-    
+
     $_SESSION['id_u'] = $bdd->lastInsertId();
+    $_SESSION['civ'] = $civ;
     $_SESSION['firstName'] = $firstName;
     $_SESSION['lastName'] = $lastName;
-    
+    $_SESSION['email']= $email;
+    $_SESSION['adresseU']= $adresseU;
+    $_SESSION['telU']= $telU;
     //redirection
     header( "Location:profil.php" );
 }
-?> <div class="container">
+
+?>
+<div class="container">
     <div class="row">
         <div class="col-12">
 
@@ -89,9 +84,21 @@ if ( isset( $_POST['submit'] ) ) {
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label for="inputadresseU" class="col-sm-2 col-form-label">Adresse</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="adresseU" class="form-control" id="inputadresseU">
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
                         <input type="text" name="email" class="form-control" id="inputEmail3" required pattern="^[a-z0-9.-_]+@[a-z0-9.-_]+\.[a-z]{2,6}$">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputtelU" class="col-sm-2 col-form-label">Telephone</label>
+                    <div class="col-sm-10">
+                        <input type="tel" name="telU" class="form-control" id="telU" size="10" required pattern="^(?:0|(?+33)?\s?|0033\s?)[1-79](?:[.-\s]?\d\d){4}$">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -101,22 +108,6 @@ if ( isset( $_POST['submit'] ) ) {
                     </div>
                 </div>
 
-                <div class="form-group row">
-                    <div class="col-sm-2">Se souvenir de moi</div>
-                    <div class="col-sm-10">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck1">
-                            <label class="form-check-label" for="gridCheck1">
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-sm-10">
-                        <!--- le ? signifie passage d'argument. --->
-                        <a href="index.php?mdp=forget">Mot de passe oublié</a>
-                    </div>
-                </div>
                 <div class="form-group row">
 
                 </div>
@@ -131,4 +122,4 @@ if ( isset( $_POST['submit'] ) ) {
 </div>
 
 <?php //Footer commun à toutes les pages 
-            require "footer.php";  ?>
+require "footer.php";  ?>

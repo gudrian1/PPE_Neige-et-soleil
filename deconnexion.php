@@ -1,14 +1,15 @@
 
 <?php
 require "partie_commune_haute.php";
-	// Initialiser la session
-	session_start();
-	
-	// Détruire la session.
-    session_destroy(); //destroy the session 
-	echo 'Vous avez été deconnecté';
+// Initialiser la session
+session_start();
+$_SESSION = array();
+// Détruire la session.
+session_destroy();  
+echo "<div class=\"bg-success text-white font-weight-bold text-center overflow\"><h5>
+               Vous êtes déconnecté </h5></div>";
 
-exit;
+unset($_SESSION);
 
 require"footer.php";
 ?>
